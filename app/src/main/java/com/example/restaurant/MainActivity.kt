@@ -34,21 +34,6 @@ class MainActivity : AppCompatActivity() {
         NextActivity()
     }
 
-    fun SavesplashScreemStatus(){
-        val preferences = PreferenceManager.getDefaultSharedPreferences(this)
-        var status: Boolean = preferences.getBoolean(key,false)
-        if (status){
-            val intent:Intent = Intent(this,Login::class.java)
-            startActivity(intent)
-        }
-        else{
-            val editor = preferences.edit()
-            editor.putBoolean(key,true)
-            editor.apply()
-            NextActivity()
-        }
-    }
-
     fun NextActivity(){
         val login = Runnable {
             val intent:Intent = Intent(this,Login::class.java)
